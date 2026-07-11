@@ -14,10 +14,16 @@ def get_db_path():
     os.makedirs(db_dir, exist_ok=True)
     return os.path.join(db_dir, "truthlens.db")
 
+_db_initialized = False
+
 def init_db():
     """
     Initializes database tables if they do not exist.
     """
+    global _db_initialized
+    if _db_initialized:
+        return
+        
     db_path = get_db_path()
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
@@ -49,6 +55,7 @@ def init_db():
     conn.commit()
     conn.close()
     logger.info("SQLite database tables initialized successfully.")
+    _db_initialized = True
     auto_populate_pipeline()
 
 def auto_populate_pipeline():
