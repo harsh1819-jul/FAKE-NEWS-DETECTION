@@ -1,25 +1,48 @@
 import re
+import os
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer, PorterStemmer
 from services.logger import logger
 
-# Initialize NLTK resources silently
+# Add common user paths to NLTK search path to locate build-time downloads
+try:
+    home_dir = os.path.expanduser("~")
+    nltk_data_path = os.path.join(home_dir, "nltk_data")
+    if nltk_data_path not in nltk.data.path:
+        nltk.data.path.append(nltk_data_path)
+except Exception as e:
+    logger.warning(f"Failed to set custom NLTK search path: {str(e)}")
+
+# Initialize NLTK resources lazily
+_nltk_initialized = False
+
 def download_nltk_resources():
     """
-    Downloads NLTK resources required for text cleaning.
-    Catches exceptions to prevent internet connection failures from crashing startup.
+    Downloads NLTK resources required for text cleaning if they are not already cached.
     """
+    global _nltk_initialized
+    if _nltk_initialized:
+        return
+        
     resources = ["stopwords", "wordnet", "omw-1.4"]
     for res in resources:
         try:
-            nltk.download(res, quiet=True)
-            logger.info(f"NLTK resource '{res}' checked/downloaded.")
-        except Exception as e:
-            logger.warning(f"Failed to download NLTK resource '{res}': {str(e)}")
-
-# Perform NLTK resource setup
-download_nltk_resources()
+            # Check if resource exists before downloading to avoid network hangs
+            if res == "stopwords":
+                nltk.data.find("corpora/stopwords")
+            elif res == "wordnet":
+                nltk.data.find("corpora/wordnet")
+            elif res == "omw-1.4":
+                nltk.data.find("corpora/omw-1.4")
+        except LookupError:
+            try:
+                nltk.download(res, quiet=True)
+                logger.info(f"NLTK resource '{res}' downloaded successfully.")
+            except Exception as e:
+                logger.warning(f"Failed to download NLTK resource '{res}': {str(e)}")
+                
+    _nltk_initialized = True
 
 # Cache NLTK instances globally for high performance
 _stop_words = None
@@ -32,7 +55,12 @@ def get_stopwords():
         try:
             _stop_words = set(stopwords.words("english"))
         except Exception:
-            _stop_words = set()
+            # Lazy download if not found
+            download_nltk_resources()
+            try:
+                _stop_words = set(stopwords.words("english"))
+            except Exception:
+                _stop_words = set()
     return _stop_words
 
 def get_lemmatizer():
@@ -41,7 +69,12 @@ def get_lemmatizer():
         try:
             _lemmatizer = WordNetLemmatizer()
         except Exception:
-            pass
+            # Lazy download if not found
+            download_nltk_resources()
+            try:
+                _lemmatizer = WordNetLemmatizer()
+            except Exception:
+                pass
     return _lemmatizer
 
 def get_stemmer():
@@ -50,7 +83,12 @@ def get_stemmer():
         try:
             _stemmer = PorterStemmer()
         except Exception:
-            pass
+            # Lazy download if not found
+            download_nltk_resources()
+            try:
+                _stemmer = PorterStemmer()
+            except Exception:
+                pass
     return _stemmer
 
 def clean_text_engine(text, use_stemming=False, use_lemmatization=True, remove_stopwords=True):
