@@ -1,0 +1,28 @@
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Local database and raw uploads
+database/*.db
+uploads/*
+!uploads/.gitkeep
+
+# Serialized models and generated reports
+models/*.joblib
+models/*.json
+reports/*.html
+!reports/.gitkeep
+
+# Execution logs
+logs/*.log
+!logs/.gitkeep
+
+# Environments
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# Streamlit local configuration
+.streamlit/secrets.toml
