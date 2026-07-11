@@ -21,9 +21,41 @@ def download_nltk_resources():
 # Perform NLTK resource setup
 download_nltk_resources()
 
+# Cache NLTK instances globally for high performance
+_stop_words = None
+_lemmatizer = None
+_stemmer = None
+
+def get_stopwords():
+    global _stop_words
+    if _stop_words is None:
+        try:
+            _stop_words = set(stopwords.words("english"))
+        except Exception:
+            _stop_words = set()
+    return _stop_words
+
+def get_lemmatizer():
+    global _lemmatizer
+    if _lemmatizer is None:
+        try:
+            _lemmatizer = WordNetLemmatizer()
+        except Exception:
+            pass
+    return _lemmatizer
+
+def get_stemmer():
+    global _stemmer
+    if _stemmer is None:
+        try:
+            _stemmer = PorterStemmer()
+        except Exception:
+            pass
+    return _stemmer
+
 def clean_text_engine(text, use_stemming=False, use_lemmatization=True, remove_stopwords=True):
     """
-    Cleanses, normalizes, and pre-processes raw text using NLTK utilities.
+    Cleanses, normalizes, and pre-processes raw text using cached NLTK utilities.
     
     Args:
         text (str): Raw input text.
@@ -48,27 +80,26 @@ def clean_text_engine(text, use_stemming=False, use_lemmatization=True, remove_s
     
     # 4. Stopwords filtering
     if remove_stopwords:
-        try:
-            stop_words = set(stopwords.words("english"))
+        stop_words = get_stopwords()
+        if stop_words:
             tokens = [t for t in tokens if t not in stop_words]
-        except Exception:
-            # Fallback if stopwords resource is unavailable
-            pass
             
     # 5. Lemmatization or Stemming
     if use_lemmatization:
-        try:
-            lemmatizer = WordNetLemmatizer()
-            tokens = [lemmatizer.lemmatize(t) for t in tokens]
-        except Exception as e:
-            logger.warning(f"Lemmatization failed, skipping step: {str(e)}")
+        lemmatizer = get_lemmatizer()
+        if lemmatizer is not None:
+            try:
+                tokens = [lemmatizer.lemmatize(t) for t in tokens]
+            except Exception as e:
+                logger.warning(f"Lemmatization failed, skipping step: {str(e)}")
             
     elif use_stemming:
-        try:
-            stemmer = PorterStemmer()
-            tokens = [stemmer.stem(t) for t in tokens]
-        except Exception as e:
-            logger.warning(f"Stemming failed, skipping step: {str(e)}")
+        stemmer = get_stemmer()
+        if stemmer is not None:
+            try:
+                tokens = [stemmer.stem(t) for t in tokens]
+            except Exception as e:
+                logger.warning(f"Stemming failed, skipping step: {str(e)}")
             
     # 6. Reconstruct string
     return " ".join(tokens)
