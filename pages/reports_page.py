@@ -68,32 +68,32 @@ else:
                     <title>TruthLens Performance Audit - {selected_model_name}</title>
                     <style>
                         body {{
-                            font-family: 'Segoe UI', Arial, sans-serif;
-                            color: #1E293B;
-                            background-color: #F8FAFC;
+                            font-family: 'Outfit', 'Segoe UI', Arial, sans-serif;
+                            color: #111827;
+                            background-color: #FFFFFF;
                             padding: 40px;
                             line-height: 1.6;
                         }}
                         .header {{
-                            border-bottom: 3px solid #38BDF8;
+                            border-bottom: 4px solid #3B82F6;
                             padding-bottom: 20px;
                             margin-bottom: 30px;
                         }}
                         .title {{
                             font-size: 28px;
-                            font-weight: bold;
-                            color: #0F172A;
+                            font-weight: 800;
+                            color: #111827;
                         }}
                         .tagline {{
-                            color: #64748B;
+                            color: #6B7280;
                             font-size: 14px;
                             margin-top: 5px;
                         }}
                         .section-title {{
                             font-size: 20px;
-                            color: #0F172A;
+                            color: #111827;
                             margin-top: 30px;
-                            border-bottom: 1px solid #E2E8F0;
+                            border-bottom: 2px solid #E5E7EB;
                             padding-bottom: 5px;
                         }}
                         .grid {{
@@ -103,20 +103,20 @@ else:
                             margin-top: 15px;
                         }}
                         .card {{
-                            background-color: #FFFFFF;
-                            border: 1px solid #E2E8F0;
+                            background-color: #F3F4F6;
+                            border: none;
                             border-radius: 8px;
                             padding: 20px;
-                            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+                            box-shadow: none;
                         }}
                         .metric-val {{
                             font-size: 24px;
-                            font-weight: bold;
-                            color: #38BDF8;
+                            font-weight: 800;
+                            color: #3B82F6;
                         }}
                         .metric-lbl {{
                             font-size: 12px;
-                            color: #64748B;
+                            color: #6B7280;
                             text-transform: uppercase;
                         }}
                         table {{
@@ -249,7 +249,7 @@ else:
         st.markdown(
             f"""
             <div class="glass-card" style="margin-bottom:10px; padding:15px !important; display:flex; justify-content:space-between; align-items:center;">
-                <span style="font-size:16px; font-weight:600; color:#38BDF8;">📄 {f}</span>
+                <span style="font-size:16px; font-weight:700; color:#3B82F6; font-family:'Outfit',sans-serif;">📄 {f}</span>
             </div>
             """,
             unsafe_allow_html=True

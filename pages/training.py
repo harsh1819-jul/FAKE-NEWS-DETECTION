@@ -168,7 +168,8 @@ else:
                 fig_cm.update_layout(
                     paper_bgcolor='rgba(0,0,0,0)',
                     plot_bgcolor='rgba(0,0,0,0)',
-                    font_color="#F8FAFC"
+                    font_color="#111827",
+                    title_font_family="Outfit"
                 )
                 st.plotly_chart(fig_cm, use_container_width=True)
                 

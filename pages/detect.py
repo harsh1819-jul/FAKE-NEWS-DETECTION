@@ -132,9 +132,9 @@ else:
             if prediction == "Real":
                 st.markdown(
                     f"""
-                    <div style="background: rgba(34, 197, 94, 0.1); border: 2px solid #22C55E; border-radius: 12px; padding: 20px; margin-bottom: 25px;">
-                        <span style="font-size: 24px; font-weight: 700; color: #22C55E;">✔ VERIFIED REAL NEWS</span>
-                        <p class="body-text" style="margin-top: 8px; color: #F8FAFC;">
+                    <div style="background: #D1FAE5; border: 2px solid #10B981; border-radius: 8px; padding: 20px; margin-bottom: 25px;">
+                        <span style="font-size: 24px; font-weight: 800; color: #10B981; font-family:'Outfit',sans-serif;">✔ VERIFIED REAL NEWS</span>
+                        <p class="body-text" style="margin-top: 8px; color: #111827;">
                             This article exhibits linguistic patterns matching high-quality, reputable reporting. 
                             Confidence rating: <b>{real_prob:.2%}</b>.
                         </p>
@@ -145,9 +145,9 @@ else:
             else:
                 st.markdown(
                     f"""
-                    <div style="background: rgba(239, 68, 68, 0.1); border: 2px solid #EF4444; border-radius: 12px; padding: 20px; margin-bottom: 25px;">
-                        <span style="font-size: 24px; font-weight: 700; color: #EF4444;">🚨 DETECTED FAKE / BIASED NEWS</span>
-                        <p class="body-text" style="margin-top: 8px; color: #F8FAFC;">
+                    <div style="background: #FEE2E2; border: 2px solid #EF4444; border-radius: 8px; padding: 20px; margin-bottom: 25px;">
+                        <span style="font-size: 24px; font-weight: 800; color: #EF4444; font-family:'Outfit',sans-serif;">🚨 DETECTED FAKE / BIASED NEWS</span>
+                        <p class="body-text" style="margin-top: 8px; color: #111827;">
                             This article exhibits sensationalized framing, hyperbole, or vocabulary linked to misinformation. 
                             Confidence rating: <b>{fake_prob:.2%}</b>.
                         </p>
@@ -171,8 +171,8 @@ else:
                 """
                 <p class="body-text" style="font-size: 15px; margin-bottom: 20px;">
                     Below, key vocabulary terms from the article are colorized according to their influence on the model. 
-                    <span style="color: #22C55E; font-weight:600;">Green</span> words push the rating toward "Real" facts, while 
-                    <span style="color: #EF4444; font-weight:600;">Red</span> words indicate biases or clickbait.
+                    <span style="color: #10B981; font-weight:700;">Green</span> words push the rating toward "Real" facts, while 
+                    <span style="color: #EF4444; font-weight:700;">Red</span> words indicate biases or clickbait.
                 </p>
                 """,
                 unsafe_allow_html=True
@@ -214,23 +214,19 @@ else:
                     # Lookup weight
                     weight = word_weights.get(clean_w, 0.0)
                     
-                    # Positive weights indicate Fake/Real depending on model class mappings
-                    # By default in sklearn binary, class 0 = Fake, class 1 = Real (alphabetical)
-                    # Let's check classes mapping
-                    is_real_class_1 = clf.classes_[1] == "Real"
-                    
                     # Adjust sign based on label mapping
+                    is_real_class_1 = clf.classes_[1] == "Real"
                     if not is_real_class_1:
                         weight = -weight
                         
                     # Threshold for highlighting
                     if weight > 0.4:  # Pushing towards Real
                         highlighted_spans.append(
-                            f'<span style="background-color: rgba(34, 197, 94, 0.2); border: 1px solid #22C55E; border-radius: 4px; padding: 1px 3px; color: #F8FAFC; font-weight: 500;">{w}</span>'
+                            f'<span style="background-color: rgba(16, 185, 129, 0.15); border: 1.5px solid #10B981; border-radius: 4px; padding: 1px 3px; color: #111827; font-weight: 700;">{w}</span>'
                         )
                     elif weight < -0.4: # Pushing towards Fake
                         highlighted_spans.append(
-                            f'<span style="background-color: rgba(239, 68, 68, 0.2); border: 1px solid #EF4444; border-radius: 4px; padding: 1px 3px; color: #F8FAFC; font-weight: 500;">{w}</span>'
+                            f'<span style="background-color: rgba(239, 68, 68, 0.15); border: 1.5px solid #EF4444; border-radius: 4px; padding: 1px 3px; color: #111827; font-weight: 700;">{w}</span>'
                         )
                     else:
                         highlighted_spans.append(w)
@@ -240,9 +236,9 @@ else:
             html_content = "".join(highlighted_spans)
             st.markdown(
                 f"""
-                <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(255,255,255,0.05); 
-                            border-radius: 8px; padding: 20px; font-family: 'Inter', sans-serif; font-size: 17px; 
-                            line-height: 1.8; color: #E2E8F0; max-height: 400px; overflow-y: auto;">
+                <div style="background: #F3F4F6; border: 2px solid #E5E7EB; 
+                            border-radius: 8px; padding: 20px; font-family: 'Outfit', sans-serif; font-size: 17px; 
+                            line-height: 1.8; color: #111827; max-height: 400px; overflow-y: auto;">
                     {html_content}
                 </div>
                 """,

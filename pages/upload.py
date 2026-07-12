@@ -164,12 +164,12 @@ else:
                 <div class="glass-card accent-border-primary" style="margin-bottom:12px; padding:18px !important;">
                     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
                         <div>
-                            <span style="font-size:18px; font-weight:700; color:#38BDF8;">{row['name']}</span>
+                            <span style="font-size:18px; font-weight:800; color:#3B82F6; font-family:'Outfit', sans-serif;">{row['name']}</span>
                             <br>
-                            <span style="font-size:13px; color:#64748B;">Ingested on: {row['uploaded_at']}</span>
+                            <span style="font-size:13px; color:#6B7280;">Ingested on: {row['uploaded_at']}</span>
                         </div>
                         <div style="text-align:right;">
-                            <span style="font-size:16px; font-weight:600; color:#F8FAFC;">{row['row_count']} Articles</span>
+                            <span style="font-size:16px; font-weight:700; color:#111827; font-family:'Outfit', sans-serif;">{row['row_count']} Articles</span>
                         </div>
                     </div>
                 </div>

@@ -14,8 +14,8 @@ with col1:
     st.markdown(
         """
         <h1 class="hero-title">TruthLens</h1>
-        <p style="font-size: 24px; font-weight: 600; color: #38BDF8; margin-top: -15px; font-family: 'Poppins', sans-serif;">
-            Analyze • Detect • Explain
+        <p style="font-size: 24px; font-weight: 700; color: #3B82F6; margin-top: -15px; font-family: 'Outfit', sans-serif; letter-spacing: -0.01em;">
+            Analyze &bull; Detect &bull; Explain
         </p>
         <p class="body-text" style="font-size: 18px; margin-bottom: 30px;">
             Combat misinformation with TruthLens—a professional, portfolio-grade analytics platform powered by advanced 
@@ -87,7 +87,7 @@ with feat_col1:
         """
         <div class="glass-card accent-border-primary" style="height: 100%;">
             <h3 class="card-title">
-                <span style="color: #38BDF8;">✨</span> Linguistic Processing
+                <span style="color: #3B82F6;">✨</span> Linguistic Processing
             </h3>
             <p class="body-text">
                 Clean and structure unstructured text feeds. Tokenize sentences, remove stopwords, stem/lemmatize 
@@ -103,7 +103,7 @@ with feat_col2:
         """
         <div class="glass-card accent-border-success" style="height: 100%;">
             <h3 class="card-title">
-                <span style="color: #22C55E;">📈</span> Multi-Model Evaluator
+                <span style="color: #10B981;">📈</span> Multi-Model Evaluator
             </h3>
             <p class="body-text">
                 Train models including Logistic Regression, Random Forest, and Naive Bayes. Compare cross-validation 

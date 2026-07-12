@@ -195,97 +195,96 @@ with tab_theme:
     st.markdown(
         """
         <div class="glass-card accent-border-primary">
-            <h3 class="card-title">🎨 Theme & Typography Tokens</h3>
-            <p class="body-text" style="margin-bottom: 20px;">
-                TruthLens utilizes a premium, dark-mode design system. Color selections are calibrated to reduce 
-                eye strain and emphasize structural information.
+            <h3 class="card-title">🎨 Theme &amp; Typography Tokens</h3>
+            <p class="body-text" style="margin-bottom: 20px; color: #4B5563;">
+                TruthLens utilizes a premium, print-inspired light-mode Flat Design system. Color selections are graphic and high-contrast, rejecting depth gradients and blurs.
             </p>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px;">
-                <div style="background: #0F172A; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 15px; text-align: center;">
-                    <div style="width: 30px; height: 30px; background: #0F172A; margin: 0 auto 10px; border-radius: 50%; border: 1px solid white;"></div>
-                    <div style="font-weight: 600; font-size: 15px; color: #F8FAFC;">Background</div>
-                    <div style="font-size: 13px; color: #64748B;">#0F172A</div>
+                <div style="background: #FFFFFF; border: 2px solid #E5E7EB; border-radius: 8px; padding: 15px; text-align: center;">
+                    <div style="width: 30px; height: 30px; background: #FFFFFF; margin: 0 auto 10px; border-radius: 50%; border: 2px solid #E5E7EB;"></div>
+                    <div style="font-weight: 700; font-size: 15px; color: #111827;">Background</div>
+                    <div style="font-size: 13px; color: #6B7280;">#FFFFFF</div>
                 </div>
-                <div style="background: #1E293B; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 15px; text-align: center;">
-                    <div style="width: 30px; height: 30px; background: #1E293B; margin: 0 auto 10px; border-radius: 50%;"></div>
-                    <div style="font-weight: 600; font-size: 15px; color: #F8FAFC;">Cards</div>
-                    <div style="font-size: 13px; color: #64748B;">#1E293B</div>
+                <div style="background: #FFFFFF; border: 2px solid #E5E7EB; border-radius: 8px; padding: 15px; text-align: center;">
+                    <div style="width: 30px; height: 30px; background: #F3F4F6; margin: 0 auto 10px; border-radius: 50%; border: 2px solid #E5E7EB;"></div>
+                    <div style="font-weight: 700; font-size: 15px; color: #111827;">Cards / Muted</div>
+                    <div style="font-size: 13px; color: #6B7280;">#F3F4F6</div>
                 </div>
-                <div style="background: #1E293B; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 15px; text-align: center;">
-                    <div style="width: 30px; height: 30px; background: #38BDF8; margin: 0 auto 10px; border-radius: 50%;"></div>
-                    <div style="font-weight: 600; font-size: 15px; color: #F8FAFC;">Primary</div>
-                    <div style="font-size: 13px; color: #64748B;">#38BDF8</div>
+                <div style="background: #FFFFFF; border: 2px solid #E5E7EB; border-radius: 8px; padding: 15px; text-align: center;">
+                    <div style="width: 30px; height: 30px; background: #3B82F6; margin: 0 auto 10px; border-radius: 50%;"></div>
+                    <div style="font-weight: 700; font-size: 15px; color: #111827;">Primary</div>
+                    <div style="font-size: 13px; color: #6B7280;">#3B82F6</div>
                 </div>
-                <div style="background: #1E293B; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 15px; text-align: center;">
-                    <div style="width: 30px; height: 30px; background: #22C55E; margin: 0 auto 10px; border-radius: 50%;"></div>
-                    <div style="font-weight: 600; font-size: 15px; color: #F8FAFC;">Success</div>
-                    <div style="font-size: 13px; color: #64748B;">#22C55E</div>
+                <div style="background: #FFFFFF; border: 2px solid #E5E7EB; border-radius: 8px; padding: 15px; text-align: center;">
+                    <div style="width: 30px; height: 30px; background: #10B981; margin: 0 auto 10px; border-radius: 50%;"></div>
+                    <div style="font-weight: 700; font-size: 15px; color: #111827;">Secondary / Success</div>
+                    <div style="font-size: 13px; color: #6B7280;">#10B981</div>
                 </div>
-                <div style="background: #1E293B; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 15px; text-align: center;">
+                <div style="background: #FFFFFF; border: 2px solid #E5E7EB; border-radius: 8px; padding: 15px; text-align: center;">
                     <div style="width: 30px; height: 30px; background: #F59E0B; margin: 0 auto 10px; border-radius: 50%;"></div>
-                    <div style="font-weight: 600; font-size: 15px; color: #F8FAFC;">Warning</div>
-                    <div style="font-size: 13px; color: #64748B;">#F59E0B</div>
+                    <div style="font-weight: 700; font-size: 15px; color: #111827;">Warning / Accent</div>
+                    <div style="font-size: 13px; color: #6B7280;">#F59E0B</div>
                 </div>
-                <div style="background: #1E293B; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 15px; text-align: center;">
+                <div style="background: #FFFFFF; border: 2px solid #E5E7EB; border-radius: 8px; padding: 15px; text-align: center;">
                     <div style="width: 30px; height: 30px; background: #EF4444; margin: 0 auto 10px; border-radius: 50%;"></div>
-                    <div style="font-weight: 600; font-size: 15px; color: #F8FAFC;">Danger</div>
-                    <div style="font-size: 13px; color: #64748B;">#EF4444</div>
+                    <div style="font-weight: 700; font-size: 15px; color: #111827;">Danger</div>
+                    <div style="font-size: 13px; color: #6B7280;">#EF4444</div>
                 </div>
             </div>
             
             <h4 class="card-title" style="margin-top: 20px;">Typography Hierarchy</h4>
             <table style="width: 100%; border-collapse: collapse;">
                 <thead>
-                    <tr style="border-bottom: 2px solid rgba(255,255,255,0.1); text-align: left;">
-                        <th style="padding: 10px; color: #38BDF8;">Element</th>
-                        <th style="padding: 10px; color: #38BDF8;">Font Family</th>
-                        <th style="padding: 10px; color: #38BDF8;">Font Size</th>
-                        <th style="padding: 10px; color: #38BDF8;">Weight</th>
+                    <tr style="border-bottom: 3px solid #E5E7EB; text-align: left;">
+                        <th style="padding: 10px; color: #3B82F6; font-family: 'Outfit', sans-serif;">Element</th>
+                        <th style="padding: 10px; color: #3B82F6; font-family: 'Outfit', sans-serif;">Font Family</th>
+                        <th style="padding: 10px; color: #3B82F6; font-family: 'Outfit', sans-serif;">Font Size</th>
+                        <th style="padding: 10px; color: #3B82F6; font-family: 'Outfit', sans-serif;">Weight</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                        <td style="padding: 10px;">Hero Title</td>
-                        <td style="padding: 10px; font-style: italic;">Poppins / Inter</td>
-                        <td style="padding: 10px; font-weight: 600;">48px</td>
-                        <td style="padding: 10px;">800 (Extra Bold)</td>
+                    <tr style="border-bottom: 1px solid #E5E7EB;">
+                        <td style="padding: 10px; color: #111827;">Hero Title</td>
+                        <td style="padding: 10px; font-style: italic; color: #4B5563;">Outfit</td>
+                        <td style="padding: 10px; font-weight: 700; color: #111827;">48px</td>
+                        <td style="padding: 10px; color: #4B5563;">800 (Extra Bold)</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                        <td style="padding: 10px;">Page Title</td>
-                        <td style="padding: 10px; font-style: italic;">Poppins / Inter</td>
-                        <td style="padding: 10px; font-weight: 600;">32px</td>
-                        <td style="padding: 10px;">700 (Bold)</td>
+                    <tr style="border-bottom: 1px solid #E5E7EB;">
+                        <td style="padding: 10px; color: #111827;">Page Title</td>
+                        <td style="padding: 10px; font-style: italic; color: #4B5563;">Outfit</td>
+                        <td style="padding: 10px; font-weight: 700; color: #111827;">32px</td>
+                        <td style="padding: 10px; color: #4B5563;">800 (Extra Bold)</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                        <td style="padding: 10px;">Section Heading</td>
-                        <td style="padding: 10px; font-style: italic;">Poppins / Inter</td>
-                        <td style="padding: 10px; font-weight: 600;">24px</td>
-                        <td style="padding: 10px;">600 (Semi Bold)</td>
+                    <tr style="border-bottom: 1px solid #E5E7EB;">
+                        <td style="padding: 10px; color: #111827;">Section Heading</td>
+                        <td style="padding: 10px; font-style: italic; color: #4B5563;">Outfit</td>
+                        <td style="padding: 10px; font-weight: 700; color: #111827;">24px</td>
+                        <td style="padding: 10px; color: #4B5563;">700 (Bold)</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                        <td style="padding: 10px;">Card Title</td>
-                        <td style="padding: 10px; font-style: italic;">Inter</td>
-                        <td style="padding: 10px; font-weight: 600;">20px</td>
-                        <td style="padding: 10px;">600 (Semi Bold)</td>
+                    <tr style="border-bottom: 1px solid #E5E7EB;">
+                        <td style="padding: 10px; color: #111827;">Card Title</td>
+                        <td style="padding: 10px; font-style: italic; color: #4B5563;">Outfit</td>
+                        <td style="padding: 10px; font-weight: 700; color: #111827;">20px</td>
+                        <td style="padding: 10px; color: #4B5563;">700 (Bold)</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                        <td style="padding: 10px;">Body Text</td>
-                        <td style="padding: 10px; font-style: italic;">Inter</td>
-                        <td style="padding: 10px; font-weight: 600;">17px</td>
-                        <td style="padding: 10px;">400 (Regular)</td>
+                    <tr style="border-bottom: 1px solid #E5E7EB;">
+                        <td style="padding: 10px; color: #111827;">Body Text</td>
+                        <td style="padding: 10px; font-style: italic; color: #4B5563;">Outfit</td>
+                        <td style="padding: 10px; font-weight: 700; color: #111827;">17px</td>
+                        <td style="padding: 10px; color: #4B5563;">400 (Regular)</td>
                     </tr>
-                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                        <td style="padding: 10px;">Button Text</td>
-                        <td style="padding: 10px; font-style: italic;">Inter</td>
-                        <td style="padding: 10px; font-weight: 600;">16px</td>
-                        <td style="padding: 10px;">600 (Semi Bold)</td>
+                    <tr style="border-bottom: 1px solid #E5E7EB;">
+                        <td style="padding: 10px; color: #111827;">Button Text</td>
+                        <td style="padding: 10px; font-style: italic; color: #4B5563;">Outfit</td>
+                        <td style="padding: 10px; font-weight: 700; color: #111827;">16px</td>
+                        <td style="padding: 10px; color: #4B5563;">600 (Semi Bold)</td>
                     </tr>
                     <tr>
-                        <td style="padding: 10px;">Sidebar Text</td>
-                        <td style="padding: 10px; font-style: italic;">Inter</td>
-                        <td style="padding: 10px; font-weight: 600;">16px</td>
-                        <td style="padding: 10px;">500 (Medium)</td>
+                        <td style="padding: 10px; color: #111827;">Sidebar Text</td>
+                        <td style="padding: 10px; font-style: italic; color: #4B5563;">Outfit</td>
+                        <td style="padding: 10px; font-weight: 700; color: #111827;">16px</td>
+                        <td style="padding: 10px; color: #4B5563;">600 (Semi Bold)</td>
                     </tr>
                 </tbody>
             </table>

@@ -78,7 +78,7 @@ def render_phase2_preview(page_title, description, icon, features, workflow_step
         f"""
         <div class="page-title">{icon} {page_title}</div>
         <div class="glass-card accent-border-primary" style="margin-bottom: 30px;">
-            <p class="body-text" style="font-size: 19px; color: #F8FAFC; margin-bottom: 0;">
+            <p class="body-text" style="font-size: 19px; color: #111827; margin-bottom: 0; font-weight: 500;">
                 {description}
             </p>
         </div>
@@ -93,14 +93,14 @@ def render_phase2_preview(page_title, description, icon, features, workflow_step
             """
             <div class="glass-card accent-border-success" style="height: 100%;">
                 <h3 class="card-title">
-                    <span style="color: #22C55E;">✔</span> Core Modules & Capabilities
+                    <span style="color: #10B981;">✔</span> Core Modules &amp; Capabilities
                 </h3>
-                <ul class="body-text" style="margin-left: 20px; padding-left: 0;">
+                <ul class="body-text" style="margin-left: 20px; padding-left: 0; color: #4B5563;">
             """,
             unsafe_allow_html=True
         )
         for feature in features:
-            st.markdown(f'<li class="body-text" style="margin-bottom: 8px;">{feature}</li>', unsafe_allow_html=True)
+            st.markdown(f'<li class="body-text" style="margin-bottom: 8px; color: #4B5563;">{feature}</li>', unsafe_allow_html=True)
         st.markdown("</ul></div>", unsafe_allow_html=True)
         
     with col2:
@@ -118,12 +118,12 @@ def render_phase2_preview(page_title, description, icon, features, workflow_step
             st.markdown(
                 f"""
                 <div style="display: flex; align-items: flex-start; margin-bottom: 12px; gap: 12px;">
-                    <div style="background: rgba(245, 158, 11, 0.1); color: #F59E0B; border: 1px solid rgba(245, 158, 11, 0.2); 
+                    <div style="background: #F59E0B; color: #FFFFFF; 
                                 border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; 
-                                justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0;">
+                                justify-content: center; font-size: 13px; font-weight: 800; flex-shrink: 0;">
                         {idx}
                     </div>
-                    <div class="body-text" style="margin-top: 2px;">{step}</div>
+                    <div class="body-text" style="margin-top: 2px; color: #4B5563;">{step}</div>
                 </div>
                 """,
                 unsafe_allow_html=True
@@ -133,12 +133,12 @@ def render_phase2_preview(page_title, description, icon, features, workflow_step
     # Technical Architecture Callout
     st.markdown(
         """
-        <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.15); 
-                    border-radius: 12px; padding: 20px; margin-top: 30px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
-            <div style="color: #38BDF8; font-weight: 700; font-size: 18px; margin-bottom: 6px; font-family: 'Poppins', sans-serif;">
+        <div style="background: #EFF6FF; border-left: 6px solid #3B82F6; 
+                    border-radius: 8px; padding: 20px; margin-top: 30px; text-align: center;">
+            <div style="color: #3B82F6; font-weight: 800; font-size: 18px; margin-bottom: 6px; font-family: 'Outfit', sans-serif;">
                 🔒 Phase 2 Architecture Ready
             </div>
-            <div class="body-text" style="font-size: 16px;">
+            <div class="body-text" style="font-size: 16px; color: #4B5563;">
                 The backend service interfaces and schema templates have been established. Natural Language Processing (NLP), 
                 tokenizers, and machine learning model loaders will be integrated seamlessly during the Phase 2 update.
             </div>

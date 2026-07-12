@@ -1,21 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
-/* Global Font Override */
+/* Global Font Override & Base Reset */
 html, body, [class*="css"], .stApp {
-    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'Outfit', 'Segoe UI', sans-serif;
     font-size: 17px;
-    color: #F8FAFC;
+    color: #111827; /* Gray 900 */
+    background-color: #FFFFFF !important;
 }
 
 /* Sidebar Custom Styling */
 [data-testid="stSidebar"] {
-    background-color: #0F172A !important;
-    border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+    background-color: #F3F4F6 !important; /* Gray 100 */
+    border-right: 2px solid #E5E7EB !important; /* Gray 200 */
 }
 
 [data-testid="stSidebarNav"] span {
     font-size: 16px !important;
-    font-weight: 500 !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
 }
 
 /* Hide Streamlit default hamburger menu and footer for clean portfolio look */
@@ -23,49 +25,45 @@ html, body, [class*="css"], .stApp {
 footer {visibility: hidden;}
 header {background-color: transparent !important;}
 
-/* Custom Text Hierarchy classes */
+/* Custom Text Hierarchy classes - Outfit based, Bold, No gradients */
 .hero-title {
-    font-family: 'Poppins', 'Inter', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 48px;
     font-weight: 800;
     line-height: 1.15;
-    background: linear-gradient(135deg, #F8FAFC 30%, #38BDF8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #111827;
     margin-bottom: 16px;
     padding-top: 10px;
 }
 
 .hero-highlight {
-    background: linear-gradient(135deg, #38BDF8 0%, #0EA5E9 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #3B82F6; /* Primary digital blue */
 }
 
 .page-title {
-    font-family: 'Poppins', 'Inter', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 32px;
-    font-weight: 700;
-    color: #F8FAFC;
-    border-bottom: 2px solid rgba(56, 189, 248, 0.2);
+    font-weight: 800;
+    color: #111827;
+    border-bottom: 4px solid #3B82F6;
     padding-bottom: 8px;
     margin-bottom: 28px;
 }
 
 .section-heading {
-    font-family: 'Poppins', 'Inter', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 24px;
-    font-weight: 600;
-    color: #38BDF8;
+    font-weight: 700;
+    color: #3B82F6;
     margin-top: 32px;
     margin-bottom: 16px;
 }
 
 .card-title {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 20px;
-    font-weight: 600;
-    color: #F8FAFC;
+    font-weight: 700;
+    color: #111827;
     margin-bottom: 12px;
     display: flex;
     align-items: center;
@@ -73,45 +71,48 @@ header {background-color: transparent !important;}
 }
 
 .body-text {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 17px;
     font-weight: 400;
-    color: #94A3B8;
+    color: #4B5563; /* Gray 600 */
     line-height: 1.6;
 }
 
-/* Glassmorphism Cards */
+/* Flat Design "Color Block" Cards (Reuses class name for compatibility) */
 .glass-card {
-    background: rgba(30, 41, 59, 0.4) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.05) !important;
-    border-radius: 16px !important;
+    background: #F3F4F6 !important; /* Solid Gray 100 bg */
+    border: none !important;
+    border-radius: 8px !important;
     padding: 24px !important;
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3) !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: none !important; /* Zero shadows! */
+    transition: all 0.2s ease !important;
     margin-bottom: 20px;
 }
 
 .glass-card:hover {
-    transform: translateY(-4px) !important;
-    border-color: rgba(56, 189, 248, 0.3) !important;
-    box-shadow: 0 15px 35px -5px rgba(56, 189, 248, 0.15) !important;
-    background: rgba(30, 41, 59, 0.6) !important;
+    transform: scale(1.02) !important; /* Snappy scale feedback */
+    background: #E5E7EB !important; /* Darkens slightly to Gray 200 */
+    box-shadow: none !important;
 }
 
-/* Premium Buttons Styling */
+/* Accent Borders - Thick 6px solid border for high contrast structure */
+.accent-border-success { border-left: 6px solid #10B981 !important; }
+.accent-border-warning { border-left: 6px solid #F59E0B !important; }
+.accent-border-danger { border-left: 6px solid #EF4444 !important; }
+.accent-border-primary { border-left: 6px solid #3B82F6 !important; }
+
+/* Flat Interactive Buttons */
 div.stButton > button {
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Outfit', sans-serif !important;
     font-size: 16px !important;
     font-weight: 600 !important;
-    color: #F8FAFC !important;
-    background: linear-gradient(135deg, #38BDF8 0%, #0EA5E9 100%) !important;
+    color: #FFFFFF !important;
+    background: #3B82F6 !important; /* Primary digital blue */
     border: none !important;
-    border-radius: 12px !important;
+    border-radius: 6px !important;
     padding: 12px 28px !important;
-    box-shadow: 0 4px 12px -2px rgba(56, 189, 248, 0.3), 0 2px 4px -1px rgba(56, 189, 248, 0.1) !important;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease !important;
     cursor: pointer !important;
     width: auto !important;
     display: inline-flex !important;
@@ -120,32 +121,30 @@ div.stButton > button {
 }
 
 div.stButton > button:hover {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 12px 20px -3px rgba(56, 189, 248, 0.4), 0 4px 6px -2px rgba(56, 189, 248, 0.2) !important;
-    background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%) !important;
+    transform: scale(1.05) !important;
+    background: #2563EB !important; /* Blue 600 */
     color: #FFFFFF !important;
+    box-shadow: none !important;
 }
 
 div.stButton > button:active {
-    transform: translateY(1px) !important;
-    box-shadow: 0 2px 4px rgba(56, 189, 248, 0.2) !important;
+    transform: scale(0.98) !important;
 }
 
-/* Streamlit Native Secondary Buttons */
+/* Secondary Button styling */
 div.stButton > button[kind="secondary"] {
-    background: rgba(30, 41, 59, 0.5) !important;
-    border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
-    color: #E2E8F0 !important;
+    background: #F3F4F6 !important;
+    border: none !important;
+    color: #111827 !important;
     box-shadow: none !important;
 }
 
 div.stButton > button[kind="secondary"]:hover {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border-color: #38BDF8 !important;
-    color: #38BDF8 !important;
+    background: #E5E7EB !important;
+    color: #111827 !important;
 }
 
-/* Custom Workflow step styling */
+/* Flat Workflow Steps */
 .workflow-container {
     display: flex;
     justify-content: space-between;
@@ -156,28 +155,28 @@ div.stButton > button[kind="secondary"]:hover {
 }
 
 .workflow-card {
-    background: rgba(30, 41, 59, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
+    background: #F3F4F6;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
     padding: 16px 20px;
     text-align: center;
     flex: 1;
     min-width: 140px;
     position: relative;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
+    box-shadow: none;
+    transition: all 0.2s ease;
 }
 
 .workflow-card:hover {
-    border-color: #38BDF8;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.1);
+    background: #E5E7EB;
+    border-color: #3B82F6;
+    transform: scale(1.05);
 }
 
 .workflow-step-num {
     font-size: 14px;
-    font-weight: 700;
-    color: #38BDF8;
+    font-weight: 800;
+    color: #3B82F6;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 4px;
@@ -185,14 +184,14 @@ div.stButton > button[kind="secondary"]:hover {
 
 .workflow-step-name {
     font-size: 16px;
-    font-weight: 600;
-    color: #F8FAFC;
+    font-weight: 700;
+    color: #111827;
 }
 
 .workflow-arrow {
-    color: #38BDF8;
+    color: #3B82F6;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -211,11 +210,11 @@ div.stButton > button[kind="secondary"]:hover {
 /* Premium custom footer */
 .footer-text {
     text-align: center;
-    color: #64748B;
+    color: #6B7280; /* Gray 500 */
     font-size: 15px;
     margin-top: 60px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 2px solid #E5E7EB;
 }
 
 /* Grid layout for features and stack */
@@ -225,9 +224,3 @@ div.stButton > button[kind="secondary"]:hover {
     gap: 20px;
     margin: 20px 0;
 }
-
-/* Accent borders */
-.accent-border-success { border-left: 4px solid #22C55E !important; }
-.accent-border-warning { border-left: 4px solid #F59E0B !important; }
-.accent-border-danger { border-left: 4px solid #EF4444 !important; }
-.accent-border-primary { border-left: 4px solid #38BDF8 !important; }

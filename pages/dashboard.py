@@ -46,9 +46,14 @@ else:
             names="Label", 
             title="Class Balance (Raw Ingested Records)",
             color="Label",
-            color_discrete_map={"Real": "#22C55E", "Fake": "#EF4444"}
+            color_discrete_map={"Real": "#10B981", "Fake": "#EF4444"}
         )
-        fig_pie.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color="#F8FAFC")
+        fig_pie.update_layout(
+            paper_bgcolor='rgba(0,0,0,0)', 
+            plot_bgcolor='rgba(0,0,0,0)', 
+            font_color="#111827",
+            title_font_family="Outfit"
+        )
         st.plotly_chart(fig_pie, use_container_width=True)
         
     else:
@@ -85,14 +90,14 @@ else:
                 names="Label",
                 title="Class Balance (Real vs. Fake)",
                 color="Label",
-                color_discrete_map={"Real": "#22C55E", "Fake": "#EF4444"},
+                color_discrete_map={"Real": "#10B981", "Fake": "#EF4444"},
                 hole=0.4
             )
             fig_class.update_layout(
                 paper_bgcolor='rgba(0,0,0,0)', 
                 plot_bgcolor='rgba(0,0,0,0)', 
-                font_color="#F8FAFC",
-                title_font_family="Poppins"
+                font_color="#111827",
+                title_font_family="Outfit"
             )
             st.plotly_chart(fig_class, use_container_width=True)
             
@@ -106,14 +111,14 @@ else:
                 color="label",
                 barmode="overlay",
                 title="Article Word Count Distribution",
-                color_discrete_map={"Real": "#22C55E", "Fake": "#EF4444"},
+                color_discrete_map={"Real": "#10B981", "Fake": "#EF4444"},
                 labels={"word_count": "Word Count", "label": "Article Label"}
             )
             fig_hist.update_layout(
                 paper_bgcolor='rgba(0,0,0,0)', 
                 plot_bgcolor='rgba(0,0,0,0)', 
-                font_color="#F8FAFC",
-                title_font_family="Poppins",
+                font_color="#111827",
+                title_font_family="Outfit",
                 bargap=0.1
             )
             st.plotly_chart(fig_hist, use_container_width=True)
@@ -138,7 +143,7 @@ else:
             df_words = pd.DataFrame(word_counts, columns=["Word", "Frequency"])
             
             # Plot horizontal bar chart
-            bar_color = "#22C55E" if target_label == "Real" else "#EF4444"
+            bar_color = "#10B981" if target_label == "Real" else "#EF4444"
             fig_words = px.bar(
                 df_words,
                 x="Frequency",
@@ -150,8 +155,8 @@ else:
             fig_words.update_layout(
                 paper_bgcolor='rgba(0,0,0,0)', 
                 plot_bgcolor='rgba(0,0,0,0)', 
-                font_color="#F8FAFC",
-                title_font_family="Poppins",
+                font_color="#111827",
+                title_font_family="Outfit",
                 yaxis={'categoryorder':'total ascending'}
             )
             st.plotly_chart(fig_words, use_container_width=True)
@@ -169,7 +174,7 @@ else:
         if len(pub_df) > 0:
             fig_pub = go.Figure()
             if "Real" in pub_df:
-                fig_pub.add_trace(go.Bar(name="Real News", x=pub_df["source"], y=pub_df["Real"], marker_color="#22C55E"))
+                fig_pub.add_trace(go.Bar(name="Real News", x=pub_df["source"], y=pub_df["Real"], marker_color="#10B981"))
             if "Fake" in pub_df:
                 fig_pub.add_trace(go.Bar(name="Fake News", x=pub_df["source"], y=pub_df["Fake"], marker_color="#EF4444"))
                 
@@ -178,8 +183,8 @@ else:
                 title="Top 10 Active Publishers & News Classifications",
                 paper_bgcolor='rgba(0,0,0,0)',
                 plot_bgcolor='rgba(0,0,0,0)',
-                font_color="#F8FAFC",
-                title_font_family="Poppins"
+                font_color="#111827",
+                title_font_family="Outfit"
             )
             st.plotly_chart(fig_pub, use_container_width=True)
         else:
